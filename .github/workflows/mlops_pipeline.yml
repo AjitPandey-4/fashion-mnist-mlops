@@ -19,6 +19,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install notebook nbconvert numpy pandas tensorflow scikit-learn matplotlib shap h2o optuna
 
+      - name: List files for debugging
+        run: ls -R
+
       - name: Execute notebook explicitly
         run: |
-          jupyter nbconvert --to notebook --execute fashion_mnist_mlops_pipeline.ipynb --output executed_notebook.ipynb
+          jupyter nbconvert --to notebook --execute ./fashion_mnist_mlops_pipeline.ipynb --output executed_notebook.ipynb
